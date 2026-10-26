@@ -99,13 +99,13 @@ Building 100 open-source tools with Claude, one real problem per episode.
 
 | 平台 / Platform | 主页 / Profile |
 | --- | --- |
-| B站 Bilibili | [space.bilibili.com/325412522](https://space.bilibili.com/325412522) |
-| 抖音 Douyin | [吴嘉鑫Jackson](https://www.douyin.com/user/MS4wLjABAAAAt3s9iqgSNO-C8QfRNhMFw23MGEpHyYPqFi-qDodmJOl9Qjtms-mkf9hc6kxKRtIP) |
-| 小红书 Xiaohongshu | [吴嘉鑫Jackson](https://www.xiaohongshu.com/user/profile/601a80ae00000000010013fb) |
-| 视频号 WeChat Channels | 微信搜索「吴嘉鑫Jackson」 / search "吴嘉鑫Jackson" in WeChat |
-| YouTube | [@JacksonWJXX](https://www.youtube.com/@JacksonWJXX) |
-| X | [@JacksonWJXX](https://x.com/JacksonWJXX) |
-| GitHub | [JacksonWJXX](https://github.com/JacksonWJXX) |
+| <img src="docs/images/icons/bilibili.png" width="16" height="16" alt=""> B站 Bilibili | [space.bilibili.com/325412522](https://space.bilibili.com/325412522) |
+| <img src="docs/images/icons/douyin.png" width="16" height="16" alt=""> 抖音 Douyin | [吴嘉鑫Jackson](https://www.douyin.com/user/MS4wLjABAAAAt3s9iqgSNO-C8QfRNhMFw23MGEpHyYPqFi-qDodmJOl9Qjtms-mkf9hc6kxKRtIP) |
+| <img src="docs/images/icons/xiaohongshu.png" width="16" height="16" alt=""> 小红书 Xiaohongshu | [吴嘉鑫Jackson](https://www.xiaohongshu.com/user/profile/601a80ae00000000010013fb) |
+| <img src="docs/images/icons/weixin.png" width="16" height="16" alt=""> 视频号 WeChat Channels | 微信搜索「吴嘉鑫Jackson」 / search "吴嘉鑫Jackson" in WeChat |
+| <img src="docs/images/icons/youtube.svg" width="16" height="16" alt=""> YouTube | [@JacksonWJXX](https://www.youtube.com/@JacksonWJXX) |
+| <img src="docs/images/icons/x.png" width="16" height="16" alt=""> X | [@JacksonWJXX](https://x.com/JacksonWJXX) |
+| <picture><source media="(prefers-color-scheme: dark)" srcset="docs/images/icons/github-dark.png"><img src="docs/images/icons/github-light.png" width="16" height="16" alt=""></picture> GitHub | [JacksonWJXX](https://github.com/JacksonWJXX) |
 
 ## 许可 / License
 
