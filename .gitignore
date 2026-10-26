@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+pytest-cache-files-*/
+config.local.json
+config.local.json.tmp
+custom_platforms.json
+custom_platforms.json.tmp
+probe/
+.idradar/
+.test-artifacts/
+*.log

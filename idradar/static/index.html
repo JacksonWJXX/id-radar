@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ID Radar</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/i18n.js" defer></script>
+  <script src="/static/plans.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+<div class="top-notices">
+<aside id="verify-notice" class="login-notice" aria-live="assertive" hidden></aside>
+<aside id="login-notice" class="login-notice" aria-live="polite" hidden></aside>
+</div>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><h1 data-i18n="title">ID Radar</h1><small id="demo-badge" class="muted" data-i18n="demo" hidden>Demo</small><span data-i18n="subtitle"></span></div>
+    <div class="top-actions">
+      <div class="language-switch" role="group" data-i18n-aria-label="languageLabel"><button id="lang-zh" data-i18n="zh" aria-pressed="false"></button><button id="lang-en" data-i18n="en" aria-pressed="false">EN</button></div>
+      <details id="history-menu" class="history-menu">
+        <summary class="icon-button" data-i18n-aria-label="history" data-i18n-title="history">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.6 7M3 4v7h7M12 7v5l3 2"/></svg>
+        </summary>
+        <div class="history-dropdown"><strong data-i18n="history"></strong><div id="history-list"></div></div>
+      </details>
+    </div>
+  </header>
+  <p id="message" class="message" role="status" hidden></p>
+  <main>
+    <section class="step-card" aria-labelledby="step1-title">
+      <h2 id="step1-title"><span class="step-number">1</span><span data-i18n="step1"></span></h2>
+      <p class="muted" data-i18n="intro"></p>
+      <div class="prompt-box">
+        <div class="prompt-toolbar"><button id="copy-prompt" class="secondary" data-i18n="copyPrompt" disabled></button></div>
+        <textarea id="naming-prompt" readonly data-i18n-aria-label="promptLabel"></textarea>
+      </div>
+      <button id="paste-sample" class="secondary" data-i18n="pasteSample" hidden></button>
+      <label class="paste-label" for="names-input" data-i18n="pasteLabel"></label>
+      <textarea id="names-input" rows="6" maxlength="20000" data-i18n-placeholder="pastePlaceholder"></textarea>
+      <button id="parse-names" class="primary" data-i18n="parseNames"></button>
+      <p id="parse-feedback" class="muted small" role="status"></p>
+    </section>
+    <section class="step-card" aria-labelledby="step2-title">
+      <h2 id="step2-title"><span class="step-number">2</span><span data-i18n="step2"></span></h2>
+      <div id="handle-help" class="handle-help" hidden><span id="handle-summary" class="muted"></span><button id="copy-handle-prompt" class="secondary" data-i18n="copyHandlePrompt"></button></div>
+      <div class="candidate-toolbar"><div class="toolbar-buttons"><button id="select-all" class="secondary" data-i18n="selectAll"></button><button id="select-none" class="secondary" data-i18n="selectNone"></button></div><span id="selection-count" class="muted"></span></div>
+      <p class="muted small" id="batch-hint"></p>
+      <div id="candidates" class="candidate-grid"><p class="empty" data-i18n="emptyCandidates"></p></div>
+    </section>
+    <section class="step-card" aria-labelledby="step3-title">
+      <div class="step-title-row"><h2 id="step3-title"><span class="step-number">3</span><span data-i18n="step3"></span></h2><button id="open-rules" class="text-button" data-i18n="rules"></button></div>
+      <div id="verification-cards" class="action-cards" aria-live="polite"></div>
+      <div id="platforms" class="pills platform-pills" data-i18n-aria-label="platforms"></div>
+      <div id="login-cards" class="action-cards" aria-live="polite"></div>
+      <form id="custom-site-form" class="custom-site-form" hidden>
+        <label for="site-label"><span data-i18n="siteName"></span><input id="site-label" name="label" required minlength="1" maxlength="12" autocomplete="off"></label>
+        <label for="site-url"><span data-i18n="siteURL"></span><input id="site-url" name="url_template" required maxlength="2000" placeholder="https://www.instagram.com/{handle}" autocomplete="off" spellcheck="false"></label>
+        <fieldset><legend data-i18n="siteKind"></legend><label><input type="radio" name="kind" value="profile" checked><span data-i18n="profileKind"></span></label><label><input type="radio" name="kind" value="search"><span data-i18n="searchKind"></span></label></fieldset>
+        <p class="muted small" data-i18n="siteHelp"></p>
+        <div class="toolbar-buttons"><button id="save-site" class="primary" type="submit" data-i18n="save"></button><button id="cancel-site" class="secondary" type="button" data-i18n="cancel"></button></div>
+        <p id="site-feedback" class="small failure" role="status"></p>
+      </form>
+      <div id="restore-platforms" class="muted small" hidden></div>
+      <button id="start-check" class="primary" disabled></button>
+      <p class="muted small" data-i18n="usage"></p>
+      <p id="check-progress" class="muted small" role="status"></p>
+      <div id="overall-progress" hidden><progress id="progress-bar" max="1" value="0" data-i18n-aria-label="progressLabel"></progress><p id="eta" class="muted small"></p></div>
+      <div id="matrix-scroll" class="matrix-scroll" tabindex="0" role="region" data-i18n-aria-label="matrixLabel" hidden><table id="matrix"></table></div>
+      <div id="results-footer" hidden>
+        <div class="legend" data-i18n-aria-label="legend">
+          <span class="status available" data-status="available"></span><span class="status similar" data-status="similar"></span><span class="status taken" data-status="taken"></span><span class="status manual" data-status="manual"></span><span class="status login" data-status="login"></span><span class="status blocked" data-status="blocked"></span><span class="status error" data-status="error"></span><span class="status invalid" data-status="invalid"></span><span class="status stopped" data-status="stopped"></span>
+        </div>
+        <div class="export-buttons"><button id="copy-markdown" class="secondary" data-i18n="markdown"></button><button id="export-csv" class="secondary" data-i18n="csv"></button></div>
+      </div>
+      <section id="id-plan" class="id-plan" hidden></section>
+    </section>
+  </main>
+  <footer data-i18n="footer"></footer>
+</div>
+<dialog id="remove-dialog" class="remove-dialog" aria-labelledby="remove-title"><h2 id="remove-title"></h2><p id="remove-description" class="muted"></p><div class="toolbar-buttons"><button id="confirm-remove" class="danger" data-i18n="removeConfirm"></button><button id="cancel-remove" class="secondary" data-i18n="cancel"></button></div></dialog>
+<dialog id="cell-details" class="cell-details" aria-labelledby="cell-title"><div class="drawer-head"><h2 id="cell-title"></h2><button id="close-details" class="icon-button" data-i18n-aria-label="closeDetails">×</button></div><div id="cell-content"></div></dialog>
+<dialog id="rules-dialog" class="rules-dialog" aria-labelledby="rules-title"><div class="drawer-head"><h2 id="rules-title" data-i18n="rules"></h2><button id="close-rules" class="icon-button" data-i18n-aria-label="closeRules">×</button></div><div id="rules-content"></div><p class="muted small" data-i18n="ruleDisclaimer"></p></dialog>
+</body>
+</html>

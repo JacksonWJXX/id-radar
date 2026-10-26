@@ -1,0 +1,97 @@
+{
+  "bilibili": {
+    "label": "B站", "target": "name", "min_len": null, "max_len": 16, "cjk_width": null,
+    "allowed": {"cjk": "yes", "latin": "yes", "digit": "yes", "underscore": "yes", "hyphen": "yes", "space": "unknown", "middle_dot": "unknown", "other_punct": "unknown", "emoji": "unknown"},
+    "extra_rules": [],
+    "unique": {"value": "yes", "confidence": "third_party"},
+    "rename_limit": "倾向不扣硬币、7 天内限一次（灰度）；旧资料为每次 6 硬币，首次免费",
+    "confidence": "conflict",
+    "field_confidence": {"length": "conflict", "cjk_width": "conflict", "allowed": "conflict", "rename_limit": "conflict"},
+    "sources": [
+      {"title": "百度知道：昵称长度的矛盾回答", "url": "https://zhidao.baidu.com/question/719999638562433565.html", "date": "2022-03-22 / 2023-06-08", "level": "third_party"},
+      {"title": "知乎：16 字符说法（仅搜索摘要）", "url": "https://www.zhihu.com/question/59475233", "date": "无日期", "level": "third_party"},
+      {"title": "百度经验：客服规则转述", "url": "https://jingyan.baidu.com/article/b7001fe1de99cf4f7382dd74.html", "date": "2023-05-12", "level": "third_party"},
+      {"title": "特玩：昵称唯一性", "url": "https://www.te5.cn/hotnews/20220211216610.html", "date": "2022-02-11", "level": "third_party"},
+      {"title": "用户视频：7 天内限一次", "url": "https://www.bilibili.com/video/BV16VpGzrEHw/", "date": "2025-09-13", "level": "third_party"}
+    ],
+    "notes": ["长度资料为 3–16、2–30、2–20，按调研倾向显示上限 16，最小长度未定。", "汉字计数、空格和部分符号未查定，冲突和未知规则只提示，不拦截。", "来源均来自 docs/platform_naming_rules.md，未另行联网补充。"]
+  },
+  "douyin": {
+    "label": "抖音", "target": "name", "min_len": null, "max_len": 20, "cjk_width": null,
+    "allowed": {"cjk": "yes", "latin": "yes", "digit": "yes", "underscore": "unknown", "hyphen": "unknown", "space": "unknown", "middle_dot": "unknown", "other_punct": "unknown", "emoji": "unknown"},
+    "extra_rules": [],
+    "unique": {"value": "yes", "confidence": "conflict"},
+    "rename_limit": "倾向每天最多 2 次、30 天内最多 4 次；认证账号可能需审核",
+    "confidence": "conflict",
+    "field_confidence": {"length": "conflict", "cjk_width": "conflict", "allowed": "conflict", "rename_limit": "third_party"},
+    "sources": [
+      {"title": "搜狐号：20 字符与重名说法", "url": "https://www.sohu.com/a/825874885_122004016", "date": "2024-11-12", "level": "third_party"},
+      {"title": "脚本之家：重名与改名说法", "url": "https://www.jb51.net/zimeiti/920295.html", "date": "2024-03-07", "level": "third_party"},
+      {"title": "小多 AI：改名频率", "url": "https://insight.xiaoduoai.com/e-commerce-information/douyin-information/can-douyin-account-change-nickname-after-30-days-how-many-times-can-douyin-nickname-be-changed-in-a-month-4-times-a-month-2-times-a-day.html", "date": "2025-04-17", "level": "third_party"},
+      {"title": "抖音用户服务协议（无长度和重名定论）", "url": "https://www.douyin.com/draft/douyin_agreement/douyin_agreement_user.html?id=6773906068725565448", "date": "2026-02-13", "level": "official"}
+    ],
+    "notes": ["上限存在 20、30、2–24 等说法，按调研倾向显示 20，不据此拦截。", "唯一性按调研倾向取不能重名，尚无官方证实。", "字符计数和特殊符号未查定；未采用资料中明确不采信的 TikTok 30 天改一次说法。"]
+  },
+  "xiaohongshu": {
+    "label": "小红书", "target": "name", "min_len": 2, "max_len": 20, "cjk_width": null,
+    "allowed": {"cjk": "yes", "latin": "yes", "digit": "yes", "underscore": "unknown", "hyphen": "unknown", "space": "unknown", "middle_dot": "unknown", "other_punct": "unknown", "emoji": "unknown"},
+    "extra_rules": [],
+    "unique": {"value": "yes", "confidence": "third_party"},
+    "rename_limit": "倾向每 30 天 1 次；7 天一次及其他冷却说法未定",
+    "confidence": "conflict",
+    "field_confidence": {"length": "conflict", "cjk_width": "conflict", "allowed": "conflict", "rename_limit": "conflict"},
+    "sources": [
+      {"title": "蚁小二：≤16 与唯一性说法", "url": "https://xueyuan.yixiaoer.cn/article/15712", "date": "2023-08-21", "level": "third_party"},
+      {"title": "网易号：2–20、唯一性及每月改名", "url": "https://www.163.com/dy/article/JRIQOC1H0516UGI2.html", "date": "2025-03-26", "level": "third_party"},
+      {"title": "蚁小二：3–16、部分符号及 30 天改名", "url": "https://xueyuan.yixiaoer.cn/article/39121", "date": "2025-06-02", "level": "third_party"}
+    ],
+    "notes": ["近期资料倾向最少 2–3、最多 16–20，无单一结论；取宽端 2–20 作展示，标冲突且不拦截。", "昵称唯一性只有第三方支持，待实测，不能当作官方结论。", "部分符号可用，但具体清单未查到；@<>/ 仅搜索摘要，未作为明确禁用规则。"]
+  },
+  "weixin_channels": {
+    "label": "视频号", "target": "name", "min_len": 3, "max_len": 30, "cjk_width": 2,
+    "allowed": {"cjk": "yes", "latin": "yes", "digit": "yes", "underscore": "no", "hyphen": "no", "space": "unknown", "middle_dot": "no", "other_punct": "no", "emoji": "no"},
+    "extra_rules": [],
+    "unique": {"value": "yes", "confidence": "user_tested"},
+    "rename_limit": "倾向每年 5 次，每年 1 月 1 日恢复；认证期间可能需先取消认证",
+    "confidence": "conflict",
+    "field_confidence": {"length": "official", "cjk_width": "official", "allowed": "official", "rename_limit": "conflict"},
+    "sources": [
+      {"title": "微信官方社区：长度、字符及唯一性", "url": "https://developers.weixin.qq.com/community/minihome/doc/000a8ef18407e0e05b7f815c956000", "date": "2023-03-20", "level": "official"},
+      {"title": "微信视频号运营规范", "url": "https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=video", "date": "无日期（动态文档）", "level": "official"},
+      {"title": "微信官方社区：每年 5 次改名", "url": "https://developers.weixin.qq.com/community/minihome/doc/0002e446944a28d77c4f4bfe55b400", "date": "2023-02-12", "level": "official"},
+      {"title": "用户实测：已有名字提示已被占用（记录在本地调研资料）", "url": "/api/rules/source", "date": "2026-10-26", "level": "user_tested"}
+    ],
+    "notes": ["不能重名获官方条款及用户实测支持，unique.confidence 按任务标为 user_tested。", "下划线、连字符、中间点、emoji 按官方“不能使用特殊符号”归入禁止，具体符号清单是直接推论；空格未获正面回答，保留 unknown。", "官方 3–30（汉字 2 计）作为格式校验；创建与修改的实际限制可能不同。", "改名次数旧资料有 2 次，与较新官方 5 次冲突；该冲突不影响格式校验。"]
+  },
+  "github": {
+    "label": "GitHub", "target": "handle", "min_len": 1, "max_len": 39, "cjk_width": 1,
+    "allowed": {"cjk": "no", "latin": "yes", "digit": "yes", "underscore": "no", "hyphen": "yes", "space": "no", "middle_dot": "no", "other_punct": "no", "emoji": "no"},
+    "extra_rules": ["hyphen_not_at_edges", "no_consecutive_hyphens"],
+    "unique": {"value": "yes", "confidence": "official"},
+    "rename_limit": "官方未列频率限制；社区称无严格限制；旧名通常立即可被使用，部分命名空间有退役例外",
+    "confidence": "official",
+    "field_confidence": {"length": "third_party", "min_len": "third_party", "max_len": "official", "cjk_width": "official", "allowed": "official", "rename_limit": "third_party"},
+    "sources": [
+      {"title": "GitHub：外部认证用户名规范", "url": "https://docs.github.com/en/enterprise-cloud@latest/admin/managing-iam/iam-configuration-reference/username-considerations-for-external-authentication", "date": "无日期（当前版）", "level": "official"},
+      {"title": "GitHub 社区：1–39 与频率说法", "url": "https://github.com/orgs/community/discussions/133913", "date": "2024-07-29", "level": "third_party"},
+      {"title": "github-username-regex：注册页提示转述", "url": "https://github.com/shinnn/github-username-regex", "date": "无日期", "level": "third_party"},
+      {"title": "GitHub：更改用户名", "url": "https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-user-account-settings/changing-your-github-username", "date": "无日期", "level": "official"},
+      {"title": "GitHub 用户名政策", "url": "https://docs.github.com/en/site-policy/other-site-policies/github-username-policy", "date": "无日期", "level": "official"}
+    ],
+    "notes": ["只校验 ASCII 字母、数字和单连字符；GitHub 显示名不在本工具校验范围。", "官方未找到完整保留词名单，不凭空加入禁词。"]
+  },
+  "x": {
+    "label": "X", "target": "handle", "min_len": 4, "max_len": 15, "cjk_width": 1,
+    "allowed": {"cjk": "no", "latin": "yes", "digit": "yes", "underscore": "yes", "hyphen": "no", "space": "no", "middle_dot": "no", "other_punct": "no", "emoji": "no"},
+    "extra_rules": ["x_reserved_terms_uncertain"],
+    "unique": {"value": "yes", "confidence": "official"},
+    "rename_limit": "可随时更改，官方未列次数限制；旧名通常立即可被使用，封禁或停用名字不会马上释放",
+    "confidence": "conflict",
+    "field_confidence": {"length": "conflict", "min_len": "conflict", "max_len": "official", "cjk_width": "official", "allowed": "official", "extra_rules": "conflict", "rename_limit": "official"},
+    "sources": [
+      {"title": "X：用户名规则", "url": "https://help.x.com/en/managing-your-account/x-username-rules", "date": "无日期（2026 页面）", "level": "official"},
+      {"title": "X：更改 handle（下限措辞有矛盾）", "url": "https://help.x.com/en/managing-your-account/change-x-handle", "date": "无日期（2026 页面）", "level": "official"}
+    ],
+    "notes": ["仅收 handle，不校验可重名的显示名。", "按调研倾向取 4–15；英文“more than 4”与德文 4–15 不一致，低于倾向下限只提示 unknown，不据此拦截；超过 15 仍按官方明确上限拦截。", "X、Admin、Twitter 的限制用法未查定，只提示需平台确认，不把所有含字母 x 的名字判 bad。", "下划线可以出现在开头结尾，连续下划线未查到额外限制，不额外禁止。"]
+  }
+}

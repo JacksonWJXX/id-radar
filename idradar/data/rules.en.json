@@ -1,0 +1,86 @@
+{
+  "bilibili": {
+    "rename_limit": "Current tendency: no coin charge and once in 7 days (rollout); older sources say 6 coins, first change free",
+    "notes": [
+      "Sources give 3–16, 2–30 and 2–20. Following the research's tendency, display a maximum of 16; the minimum is unconfirmed.",
+      "CJK counting, spaces and some symbols are unconfirmed. Conflicting and unknown rules only produce warnings.",
+      "All sources come from docs/platform_naming_rules.md; no additional online research was used."
+    ],
+    "sources": [
+      {"title": "Baidu Zhidao: conflicting nickname length answers", "date": "2022-03-22 / 2023-06-08"},
+      {"title": "Zhihu: 16-character claim (search snippet only)", "date": "Undated"},
+      {"title": "Baidu Experience: customer support rules, paraphrased", "date": "2023-05-12"},
+      {"title": "Te5: nickname uniqueness", "date": "2022-02-11"},
+      {"title": "User video: one change in 7 days", "date": "2025-09-13"}
+    ]
+  },
+  "douyin": {
+    "rename_limit": "Tendency: twice a day, four times in 30 days; verified accounts may require review",
+    "notes": [
+      "Sources give limits of 20, 30 and 2–24. Display 20 following the research's tendency, without blocking on this basis.",
+      "The research leans toward unique names, but this has not been officially confirmed.",
+      "Character counting and special symbols are unconfirmed. The explicitly rejected claim about TikTok's 30-day rename interval was not adopted."
+    ],
+    "sources": [
+      {"title": "Sohu: 20-character and uniqueness claims", "date": "2024-11-12"},
+      {"title": "JB51: uniqueness and renaming claims", "date": "2024-03-07"},
+      {"title": "Xiaoduo AI: rename frequency", "date": "2025-04-17"},
+      {"title": "Douyin User Agreement (no definitive length or uniqueness rule)", "date": "2026-02-13"}
+    ]
+  },
+  "xiaohongshu": {
+    "rename_limit": "Tendency: once in 30 days; claims of 7 days and other cooldowns are unconfirmed",
+    "notes": [
+      "Recent sources suggest minima of 2–3 and maxima of 16–20, with no single conclusion. Display the wider 2–20 range as conflicting and do not block on it.",
+      "Nickname uniqueness is supported only by third parties and needs testing; it is not an official conclusion.",
+      "Some symbols may be allowed, but the exact list was not found. @<>/ appeared only in search snippets and were not adopted as explicit restrictions."
+    ],
+    "sources": [
+      {"title": "Yixiaoer: maximum 16 and uniqueness claims", "date": "2023-08-21"},
+      {"title": "NetEase: 2–20, uniqueness and monthly renaming", "date": "2025-03-26"},
+      {"title": "Yixiaoer: 3–16, some symbols and 30-day renaming", "date": "2025-06-02"}
+    ]
+  },
+  "weixin_channels": {
+    "rename_limit": "Tendency: five changes per year, reset on January 1; verification may need to be cancelled first",
+    "notes": [
+      "Uniqueness is supported by official terms and user testing. unique.confidence is marked user_tested as requested.",
+      "Underscores, hyphens, middle dots and emoji are treated as forbidden under the official ban on special symbols. This symbol list is an inference; spaces remain unknown without a clear answer.",
+      "The official 3–30 rule, with CJK characters counting as two, is used for format checks. Creating and renaming may have different practical limits.",
+      "Older sources give two changes, conflicting with the newer official limit of five. This does not affect format validation."
+    ],
+    "sources": [
+      {"title": "WeChat official community: length, characters and uniqueness", "date": "2023-03-20"},
+      {"title": "WeChat Channels operating rules", "date": "Undated (live document)"},
+      {"title": "WeChat official community: five changes per year", "date": "2023-02-12"},
+      {"title": "User test: existing name reported as taken (local research record)", "date": "2026-10-26"}
+    ]
+  },
+  "github": {
+    "rename_limit": "No official frequency limit listed; community says no strict limit. Old names are usually released immediately, with some retired namespace exceptions",
+    "notes": [
+      "Only ASCII letters, digits and single hyphens are checked. GitHub display names are outside this tool's scope.",
+      "No complete official list of reserved words was found, so no invented restrictions are added."
+    ],
+    "sources": [
+      {"title": "GitHub: username considerations for external authentication", "date": "Undated (current version)"},
+      {"title": "GitHub Community: 1–39 and frequency claims", "date": "2024-07-29"},
+      {"title": "github-username-regex: registration hint, paraphrased", "date": "Undated"},
+      {"title": "GitHub: changing your username", "date": "Undated"},
+      {"title": "GitHub username policy", "date": "Undated"}
+    ]
+  },
+  "x": {
+    "rename_limit": "Changes are allowed at any time, with no official count limit listed. Old names are usually released immediately; suspended or deactivated names are not released immediately",
+    "notes": [
+      "Only handles are collected; duplicate display names are not validated.",
+      "Use the research's 4–15 tendency. English 'more than 4' conflicts with German 4–15, so names below that minimum only get an unknown warning; the explicit official maximum of 15 still blocks.",
+      "Restricted uses of X, Admin and Twitter are unconfirmed and require platform confirmation. Names containing the letter x are not automatically rejected.",
+      "Underscores may appear at either end. No additional restriction on consecutive underscores was found, so none is added."
+    ],
+    "sources": [
+      {"title": "X: username rules", "date": "Undated (2026 page)"},
+      {"title": "X: changing your handle (conflicting minimum wording)", "date": "Undated (2026 page)"}
+    ]
+  }
+}
