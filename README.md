@@ -41,6 +41,8 @@
 **抖音、小红书要先登录。** 页面顶部会提示，点“扫码登录”，用手机 App 扫屏幕上的二维码即可，登录一次会记住。
 **遇到验证（抖音滑块、小红书“扫码验证身份”）**：工具会自动弹出那个窗口并在顶部闪烁提示，你自己完成验证后它会自动接着查。工具不会替你过验证码。
 
+> **注意账号风险：** 抖音、小红书是用你的登录状态自动搜索，平台可能判定为“使用第三方工具模拟浏览”，对账号限流或限制功能。**建议用不常用的小号扫码登录，不要用你做内容的主号。**小号也可能被处理，请自行权衡；不想冒险的话，在第 3 步取消勾选抖音、小红书，自己去 App 里搜。
+
 ### 注意
 
 - **没搜到同名 ≠ 一定能注册**，最终以平台注册时的提示为准。
@@ -81,6 +83,8 @@ Offline demo: `start.bat --demo` (or `bash start.sh --demo`), then open <http://
 5. Read the results: green "No match found", amber "Similar name", red "Taken". Conflicting rows get variant plans; copy the name you like and register.
 
 Douyin and Xiaohongshu require signing in once with a QR code shown on the page. When a platform asks for verification, its window pops up and a banner flashes; finish it yourself and checks continue automatically. The tool never solves verification for you.
+
+> **Account risk:** Douyin and Xiaohongshu are searched automatically with your signed-in session. The platforms may treat this as "simulated browsing with third-party tools" and limit the account's reach or features. **Sign in with a spare account, not the main account you post from.** A spare account can still be restricted, so decide for yourself; to avoid the risk entirely, untick Douyin and Xiaohongshu in Step 3 and search in their apps yourself.
 
 ### Notes
 
